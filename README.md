@@ -1,6 +1,7 @@
 # Fetch Progress
 
-    Progress of response for fetch API
+    Progress of response for fetch API.
+    Get progress report of your response called from fetch like percentage, speed, total, transferred, eta and remaingin.
 
 ## Install
 
