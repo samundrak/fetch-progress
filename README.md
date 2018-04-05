@@ -1,7 +1,7 @@
 # [Fetch Progress](https://samundrak.github.io/fetch-progress) 
 
     Progress of response for fetch API.
-    Get progress report of your response called from fetch like percentage, speed, total, transferred, eta and remaingin.
+    Get progress report of your response called from fetch like percentage, speed, total, transferred, eta and remaining.
 
 ## Install
 
