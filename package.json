@@ -1,6 +1,6 @@
 {
   "name": "fetch-progress",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Progress of response for fetch API",
   "main": "index.js",
   "scripts": {
