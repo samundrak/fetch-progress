@@ -1,4 +1,4 @@
-# Fetch Progress
+# [Fetch Progress](https://samundrak.github.io/fetch-progress) 
 
     Progress of response for fetch API.
     Get progress report of your response called from fetch like percentage, speed, total, transferred, eta and remaingin.
@@ -60,5 +60,6 @@ const self = this;
 ```
 
 # Demo
+[Live Demo](https://samundrak.github.io/fetch-progress) 
 
 Clone this repo and run `npm i` and `npm run dev` which will start a server or you can see `examples/` folder in this repo.
