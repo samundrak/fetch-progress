@@ -21,6 +21,15 @@ fetch(this.props.src)
         // implement onProgress method
         onProgress(progress) {
           console.log({ progress });
+          // A possible progress report you will get
+          // {
+          //    total: 3333,
+          //    transferred: 3333,
+          //    speed: 3333,
+          //    eta: 33,
+          //    percentage: 33
+          //    remaining: 3333,
+          // }
         },
       })
     )
