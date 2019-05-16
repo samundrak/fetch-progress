@@ -10,6 +10,7 @@ export default function({
   emitDelay = 10,
   onProgress = () => null,
   onComplete = () => null,
+  onError = () => null,
 }) {
   return function FetchProgress(response) {
     if (!isFetchProgressSupported()) {
@@ -33,7 +34,7 @@ export default function({
             }
             controller.enqueue(value);
             push();
-          });
+          }).catch((err) => { onError(err); });
         }
 
         push();
