@@ -17,10 +17,13 @@ class ProgressItem extends Component {
           onProgress(progress) {
             self.setState({ progress });
           },
+          onError(err) {
+            console.log(err);
+          },
         })
       )
-      .then(r => r.blob())
-      .then(src => {
+      .then((r) => r.blob())
+      .then((src) => {
         this.src = URL.createObjectURL(src);
         this.setState({
           loaded: true,

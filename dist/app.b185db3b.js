@@ -77,7 +77,7 @@ parcelRequire = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({3:[function(require,module,exports) {
+})({7:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1093,7 +1093,7 @@ exports.rerender = rerender;
 exports.options = options;
 exports.default = preact;
 //# sourceMappingURL=preact.esm.js.map
-},{}],18:[function(require,module,exports) {
+},{}],14:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1136,7 +1136,7 @@ function speedometer(seconds) {
     return buffer.length < resolution ? top : (top - btm) * resolution / buffer.length;
   };
 }
-},{}],14:[function(require,module,exports) {
+},{}],12:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1212,7 +1212,7 @@ var Progress = function () {
 }();
 
 exports.default = Progress;
-},{"./speedometer":18}],10:[function(require,module,exports) {
+},{"./speedometer":14}],10:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1232,7 +1232,11 @@ exports.default = function (_ref) {
       _ref$onComplete = _ref.onComplete,
       onComplete = _ref$onComplete === undefined ? function () {
     return null;
-  } : _ref$onComplete;
+  } : _ref$onComplete,
+      _ref$onError = _ref.onError,
+      onError = _ref$onError === undefined ? function () {
+    return null;
+  } : _ref$onError;
 
   return function FetchProgress(response) {
     if (!isFetchProgressSupported()) {
@@ -1261,6 +1265,8 @@ exports.default = function (_ref) {
             }
             controller.enqueue(value);
             push();
+          }).catch(function (err) {
+            onError(err);
           });
         }
 
@@ -1280,7 +1286,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function isFetchProgressSupported() {
   return typeof Response !== 'undefined' && typeof ReadableStream !== 'undefined';
 }
-},{"./Progress":14}],42:[function(require,module,exports) {
+},{"./Progress":12}],6:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -1334,6 +1340,9 @@ var ProgressItem = function (_Component) {
       fetch(this.props.src).then((0, _index2.default)({
         onProgress: function onProgress(progress) {
           self.setState({ progress: progress });
+        },
+        onError: function onError(err) {
+          console.log(err);
         }
       })).then(function (r) {
         return r.blob();
@@ -1359,7 +1368,7 @@ var ProgressItem = function (_Component) {
 }(_preact.Component);
 
 exports.default = ProgressItem;
-},{"preact":3,"../index":10}],2:[function(require,module,exports) {
+},{"preact":7,"../index":10}],4:[function(require,module,exports) {
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -1513,7 +1522,7 @@ var App = function (_Component) {
 }(_preact.Component);
 
 (0, _preact.render)((0, _preact.h)(App, null), document.getElementById('root'));
-},{"preact":3,"./ProgressItem":42}],44:[function(require,module,exports) {
+},{"preact":7,"./ProgressItem":6}],16:[function(require,module,exports) {
 
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -1543,7 +1552,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '46183' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '32864' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -1682,5 +1691,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},[44,2])
+},{}]},{},[16,4])
 //# sourceMappingURL=/app.b185db3b.map

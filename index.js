@@ -23,18 +23,26 @@ export default function({
     const stream = new ReadableStream({
       start(controller) {
         function push() {
-          reader.read().then(({ done, value }) => {
-            if (done) {
-              onComplete({});
-              controller.close();
-              return;
-            }
-            if (value) {
-              progress.flow(value, onProgress);
-            }
-            controller.enqueue(value);
-            push();
-          }).catch((err) => { onError(err); });
+          reader
+            .read()
+            .then(({ done, value }) => {
+              if (done) {
+                onComplete({});
+                controller.close();
+                return;
+              }
+              if (value) {
+                progress.flow(
+                  value,
+                  onProgress
+                );
+              }
+              controller.enqueue(value);
+              push();
+            })
+            .catch((err) => {
+              onError(err);
+            });
         }
 
         push();
