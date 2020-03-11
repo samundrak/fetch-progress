@@ -3,6 +3,7 @@
   "version": "1.2.0",
   "description": "Progress of response for fetch API",
   "main": "index.js",
+  "typings": "index.d.ts",
   "scripts": {
     "dev": "parcel examples/index.html",
     "build:demo": "parcel build examples/index.html --public-url ./",
