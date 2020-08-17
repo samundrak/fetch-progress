@@ -16,7 +16,7 @@ export default function({
     if (!isFetchProgressSupported()) {
       return response;
     }
-    const { body, headers } = response;
+    const { body, headers, status } = response;
     const contentLength = headers.get('content-length') || defaultSize;
     const progress = new Progress(contentLength, emitDelay);
     const reader = body.getReader();
@@ -48,6 +48,6 @@ export default function({
         push();
       },
     });
-    return new Response(stream, { headers });
+    return new Response(stream, { headers, status });
   };
 }
