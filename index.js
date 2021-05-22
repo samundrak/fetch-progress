@@ -1,4 +1,4 @@
-import Progress from './Progress.js';
+import Progress from './progress.js';
 
 export function isFetchProgressSupported() {
   return (
