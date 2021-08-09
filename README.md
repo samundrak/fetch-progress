@@ -11,11 +11,13 @@ Get progress report of your response called from fetch like percentage, speed, t
 
 import `fetchProgress` method to your project
 
-`import fetchProgress from 'fetch-progress`
+```js
+import fetchProgress from 'fetch-progress
+```
 
 Now use `fetchProgress` method on your fetch calls, try to put this before using response. You can
 
-```
+```js
 fetch(this.props.src)
     .then(
       fetchProgress({
@@ -38,7 +40,7 @@ fetch(this.props.src)
 
 # Example
 
-```
+```js
 import fetchProgress from '../index';
 
 const self = this;
