@@ -9,6 +9,10 @@
     "build:demo": "parcel build examples/index.html --public-url ./",
     "deploy": "gh-pages -d dist"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samundrak/fetch-progress.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
